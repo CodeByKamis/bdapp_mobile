@@ -1,3 +1,4 @@
+import 'package:bdapp/post.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -49,17 +50,43 @@ class _TelaGetState extends State<TelaGet> {
     );
   }
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(),
-        body: Column(
+        appBar: AppBar(
+          title: const Text("Kamila", style: TextStyle(color: Color.fromARGB(255, 218, 110, 209), fontWeight: FontWeight.bold) ),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(255, 95, 0, 87),
+        ),
+        body:Center(child:Column(
           children: [
-            Text("$temperatura")
+            const SizedBox(height: 40),
+            Text("$temperatura", style: TextStyle(color: const Color.fromARGB(255, 218, 110, 209), fontSize: 23, )),
+            const SizedBox(height: 20),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PostPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 95, 0, 87),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+            ),
+            child: Text("Ir para pagina post", 
+            style: TextStyle(
+              color: const Color.fromARGB(255, 218, 110, 209),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.2,
+            ),),)
           ],
-        )
-      )
+        ),
+        ),
+      ),
     );
   }
+
 }
