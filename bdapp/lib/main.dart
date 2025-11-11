@@ -1,4 +1,6 @@
+import 'package:bdapp/delete.dart';
 import 'package:bdapp/post.dart';
+import 'package:bdapp/put.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -81,7 +83,54 @@ class _TelaGetState extends State<TelaGet> {
               fontSize: 20,
               fontWeight: FontWeight.bold,
               letterSpacing: 1.2,
-            ),),)
+            ),),),
+
+
+            const SizedBox(height: 20),   
+
+
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>DeletePage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 95, 0, 87),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+            ),
+            child: Text("Ir para pagina delete", 
+            style: TextStyle(
+              color: const Color.fromARGB(255, 218, 110, 209),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.2,
+            ),),),
+
+
+            const SizedBox(height: 23,),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PutPage()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 95, 0, 87),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+            ),
+            child: Text("Ir para pagina Put", 
+            style: TextStyle(
+              color: const Color.fromARGB(255, 218, 110, 209),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.2,
+            ),),),
+
+
+
           ],
         ),
         ),
